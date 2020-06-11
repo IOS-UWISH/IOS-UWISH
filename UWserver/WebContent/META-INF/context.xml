@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="UWserver" path="/UWserver"
+	reloadable="true">
+	<!-- 
+		auth 為認證方式，一般為Container
+		maxTotal 連線池的最大連線數，預設為8      （實務上通常開到100）
+		maxIdle 連線池最多可空閒的連線數，預設為8
+		maxWaitMillis 連線池中連線用完時，新請求的等待時間，單位毫秒，超過此時間會拋出列外。預設為-1 (無限時間)
+	 -->
+	<Resource 
+		name="jdbc/UWISH"
+		auth="Container"
+		type="javax.sql.DataSource" 
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/UWISH?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Taipei" 
+		username="root"
+		password="chickendog0108" 
+		maxTotal="20" 
+		maxIdle="10" 
+		maxWaitMillis="5000"/>
+		
+</Context>
+
+<!--
+allowPublicKeyRetrieval=true 
+ -->
