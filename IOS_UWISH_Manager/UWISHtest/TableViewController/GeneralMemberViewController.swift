@@ -68,6 +68,12 @@ class GeneralMemberViewController: UIViewController,UITableViewDelegate,UITableV
         searchBar.resignFirstResponder()
     }
     
+    // 點擊view時將鍵盤隱藏
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         view.endEditing(true)
+    }
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if test == ""{
             return userList.count
